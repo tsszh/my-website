@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import { Router } from 'react-router'
 
+import 'SRC/assets/style/bootstrap.min.css'
 import 'SRC/assets/style/font-awesome.css'
+import 'SRC/assets/style/themify-icons.css'
 import 'SRC/assets/style/style.css'
 
 import createRootRoutes from 'SRC/routes.js'

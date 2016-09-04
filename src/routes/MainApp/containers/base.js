@@ -1,23 +1,50 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+
+import Header from 'SRC/components/header'
+
+import { isMobile } from 'SRC/utils/isMobile'
+import { Grid, Row, Col } from 'react-bootstrap'
 
 import CSSModules from 'react-css-modules'
 import styles from './base.hcss'
 
 class Base extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      windowWidth: window.innerWidth
+    }
+    this.handleResize = this.handleResize.bind(this)
+  }
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize)
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize)
+  }
+  handleResize() {
+    this.setState({
+      windowWidth: window.innerWidth
+    })
+  }
   render() {
+    const height = isMobile() ? 'auto' : '100%'
     return (
-      <div>
-        <div>Base Header</div>
-        <div>
-          <Link to="/home">Home</Link>
-          <Link to="/blog">Blog</Link>
-        </div>
-        <hr />
-        <div>
-          {this.props.children}
-        </div>
-      </div>
+      <Grid fluid className="non-padding" style={{ height: window.innerHeight }}>
+        <Row className="full-height">
+          <Col xs={12} md={6} className="full-height non-padding">
+            <Col xs={12} md={3} lg={3} className="non-padding" style={{ height }}>
+              <Header />
+            </Col>
+            <Col xs={12} md={9} lg={9} className="full-height non-padding">
+              <div>Backgrounds</div>
+            </Col>
+          </Col>
+          <Col xs={12} md={6} className="non-padding" style={{ height }}>
+            {this.props.children}
+          </Col>
+        </Row>
+      </Grid>
     )
   }
 }
