@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import Header from 'SRC/components/header'
+import MainImage from 'SRC/components/main-image'
 
 import { isMobile } from 'SRC/utils/isMobile'
 import { Grid, Row, Col } from 'react-bootstrap'
@@ -37,7 +38,7 @@ class Base extends Component {
               <Header />
             </Col>
             <Col xs={12} md={9} lg={9} className="full-height non-padding">
-              <div>Backgrounds</div>
+              <MainImage />
             </Col>
           </Col>
           <Col xs={12} md={6} className="non-padding" style={{ height }}>
