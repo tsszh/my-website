@@ -8,9 +8,9 @@ import HeaderHorizontal from './HeaderHorizontal'
 class Header extends Component {
   render() {
     if (isMobile()) {
-      return <HeaderHorizontal />
+      return <HeaderHorizontal {...this.props} />
     }
-    return <HeaderVertical />
+    return <HeaderVertical {...this.props} />
   }
 }
 

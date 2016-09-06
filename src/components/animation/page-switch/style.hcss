@@ -1,0 +1,35 @@
+.example-enter {
+  margin-left: -50%;
+  opacity: 0;
+}
+
+.example-enter.example-enter-active {
+  margin-left: 0;
+  opacity: 1;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+.example-leave {
+  margin-left: 0;
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  margin-left: -50%;
+  opacity: 0;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+.example-appear {
+  margin-left: -50%;
+  opacity: 0;
+}
+
+.example-appear.example-appear-active {
+  margin-left: 0;
+  opacity: 1;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}

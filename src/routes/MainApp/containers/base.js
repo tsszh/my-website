@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import Header from 'SRC/components/header'
 import MainImage from 'SRC/components/main-image'
 
+import PageSwitch from 'SRC/components/animation/page-switch'
+
 import { isMobile } from 'SRC/utils/isMobile'
 import { Grid, Row, Col } from 'react-bootstrap'
 
@@ -30,20 +32,29 @@ class Base extends Component {
   }
   render() {
     const height = isMobile() ? 'auto' : '100%'
+    const pageName = this.props.location.pathname.split('/')[1] || 'home'
+    const isHomePage = pageName === 'home'
     return (
       <Grid fluid className="non-padding" style={{ height: window.innerHeight }}>
         <Row className="full-height">
-          <Col xs={12} md={6} className="full-height non-padding">
+          <Col xs={12} md={6} className="full-height non-padding" styleName="home-page" style={{ left: isHomePage ? '25%' : 0 }}>
             <Col xs={12} md={3} lg={3} className="non-padding" style={{ height }}>
-              <Header />
+              <Header currentPathName={pageName} />
             </Col>
             <Col xs={12} md={9} lg={9} className="full-height non-padding">
               <MainImage />
             </Col>
           </Col>
-          <Col xs={12} md={6} className="non-padding" style={{ height }}>
-            {this.props.children}
-          </Col>
+          {
+            isHomePage ? null :
+              <Col xs={12} md={6} className="non-padding" style={{ height }}>
+                <PageSwitch key={pageName}>
+                  <div className="full" key={pageName} styleName="web-page">
+                    {this.props.children}
+                  </div>
+                </PageSwitch>
+              </Col>
+          }
         </Row>
       </Grid>
     )
@@ -54,7 +65,8 @@ Base.propTypes = {
   children: React.PropTypes.oneOfType([
     React.PropTypes.string,
     React.PropTypes.element
-  ])
+  ]),
+  location: React.PropTypes.object
 }
 
 export default CSSModules(Base, styles)

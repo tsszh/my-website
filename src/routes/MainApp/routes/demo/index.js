@@ -1,14 +1,14 @@
-/* vim: set filetype=javascript.jsx */
 import React, { Component } from 'react'
+
 import CSSModules from 'react-css-modules'
 import styles from './style.hcss'
 
-class Home extends Component {
+class Demo extends Component {
   render() {
     return (
-      <div> Home </div>
+      <div> Demo </div>
     )
   }
 }
 
-export default CSSModules(Home, styles)
+export default CSSModules(Demo, styles)

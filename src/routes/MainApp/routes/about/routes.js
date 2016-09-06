@@ -1,8 +1,8 @@
 export default {
-  path: 'home',
+  path: 'about',
   getComponent(location, cb) {
     require.ensure([], (require) => {
       cb(null, require('./index').default)
-    }, 'home')
+    }, 'about')
   }
 }

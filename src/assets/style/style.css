@@ -93,6 +93,9 @@
 }
 
 /* Override Default Bootstrap Layout */
+body {
+  background-color: pink !important;
+}
 .container-fluid {
   padding: 0;
 }

@@ -1,0 +1,23 @@
+.example-enter {
+}
+
+.example-enter.example-enter-active {
+  -webkit-transition: all .5s ease-in;
+  transition: all .5s ease-in;
+}
+
+.example-leave {
+}
+
+.example-leave.example-leave-active {
+  -webkit-transition: all .5s ease-in;
+  transition: all .5s ease-in;
+}
+
+.example-appear {
+}
+
+.example-appear.example-appear-active {
+  -webkit-transition: all .5s ease-in;
+  transition: all .5s ease-in;
+}

@@ -15,7 +15,7 @@ module.exports = {
       './src/index.js'
     ],
     'vendor': ['react', 'react-dom', 'immutable', 'moment',
-      'react-css-modules', 'react-redux', 'redux', 'react-router',
+      'react-bootstrap', 'react-css-modules', 'react-redux', 'redux', 'react-router',
       'react-router-redux', 'isomorphic-fetch', 'redux-thunk'
     ]
   },

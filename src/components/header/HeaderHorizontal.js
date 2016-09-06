@@ -37,10 +37,24 @@ class Header extends Component {
     this.handleNavSelection = this.handleNavSelection.bind(this)
     this.handleNavCollapse = this.handleNavCollapse.bind(this)
   }
+  componentWillMount() {
+    this.setState({
+      activeNavKey: this.props.currentPathName || 'home'
+    })
+  }
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      activeNavKey: nextProps.currentPathName || 'home'
+    })
+  }
   handleNavSelection(selectedKey) {
     this.setState({
       activeNavKey: selectedKey
     })
+    this.setState({
+      menuCollapse: true
+    })
+    this.context.router.push(`/${selectedKey}`)
   }
   handleNavCollapse() {
     this.setState({
@@ -79,7 +93,12 @@ Header.propTypes = {
   children: React.PropTypes.oneOfType([
     React.PropTypes.string,
     React.PropTypes.element
-  ])
+  ]),
+  currentPathName: React.PropTypes.string
+}
+
+Header.contextTypes = {
+  router: React.PropTypes.object.isRequired
 }
 
 export default CSSModules(Header, styles)
