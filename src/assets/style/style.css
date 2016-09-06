@@ -94,7 +94,15 @@
 
 /* Override Default Bootstrap Layout */
 body {
-  background-color: pink !important;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #333333;
+  background: #f5f5f5;
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .container-fluid {
   padding: 0;

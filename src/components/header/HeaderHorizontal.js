@@ -72,7 +72,7 @@ class Header extends Component {
               <Col xs={4} className="text-right"><h3><i className="cursor-pointer ti-menu" onClick={this.handleNavCollapse}></i></h3></Col>
             </Row>
           </Grid>
-          <div styleName="navigation" style={{ height: this.state.menuCollapse ? 0 : 'auto' }}>
+          <div styleName="navigation" style={{ height: this.state.menuCollapse ? 0 : 'auto', background: 'rgba(134, 134, 134, 0.8)' }}>
             <Nav className="full-height" bsStyle="pills" stacked activeKey={this.state.activeNavKey} onSelect={this.handleNavSelection}>
               {
                 menuItems.map(item => (
