@@ -57,8 +57,27 @@ const resume = {
       ]
     }
   }],
-  skills: {
-  }
+  skills: [
+    { name: 'Java', score: 0.7 },
+    { name: 'JavaScript', score: 1 },
+    { name: 'Python', score: 0.6 },
+    { name: 'C', score: 0.5 },
+    { name: 'React', score: 1 },
+    { name: 'Redux', score: 0.9 },
+    { name: 'Router', score: 0.7 },
+    { name: 'Webpack', score: 0.3 },
+    { name: 'HTML5', score: 0.8 },
+    { name: 'CSS3', score: 0.8 },
+    { name: 'Highcharts', score: 0.8 },
+    { name: 'jQuery', score: 0.9 },
+    { name: 'Bootstrap', score: 0.5 },
+    { name: 'Maven', score: 0.4 },
+    { name: 'JUnit', score: 0.6 },
+    { name: 'MS Office', score: 0.7 },
+    { name: 'OriginLab', score: 0.6 },
+    { name: 'MatLab', score: 0.4 },
+    { name: '3ds Max', score: 0.3 }
+  ]
 }
 
 export default resume

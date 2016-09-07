@@ -21,7 +21,7 @@ class Resume extends Component {
         </section>
 
         <section className="education_employment">
-          <h3 className="section_title">EMPLOYMENT</h3>
+          <h3 className="section_title">experience</h3>
           <div className="vertical_line v2"></div>
           <Employment />
         </section>

@@ -36,7 +36,8 @@
     "react-router": "^2.7.0",
     "react-router-redux": "^4.0.4",
     "redux": "^3.5.2",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "wordcloud": "^1.0.5"
   },
   "main": "lib/index.js",
   "devDependencies": {
