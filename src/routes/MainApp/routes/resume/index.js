@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
+
+import Resume from 'SRC/components/resume'
+
 import CSSModules from 'react-css-modules'
 import styles from './style.hcss'
 
-class Resume extends Component {
+class ResumeWrapper extends Component {
   render() {
     return (
-      <div> Resume </div>
+      <Resume />
     )
   }
 }
 
-export default CSSModules(Resume, styles)
+export default CSSModules(ResumeWrapper, styles)

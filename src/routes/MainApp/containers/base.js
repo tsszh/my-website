@@ -16,9 +16,24 @@ class Base extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      windowWidth: window.innerWidth
+      windowWidth: window.innerWidth,
+      imgs: []
     }
     this.handleResize = this.handleResize.bind(this)
+  }
+  componentWillMount() {
+    // Dynamic Loading of Background Images
+    if (!isMobile()) {
+      require.ensure([], (require) => {
+        this.setState({ imgs: [...this.state.imgs, require('SRC/assets/img/bg/bg1.jpg')] })
+      }, 'background1')
+      require.ensure([], (require) => {
+        this.setState({ imgs: [...this.state.imgs, require('SRC/assets/img/bg/bg2.jpg')] })
+      }, 'background2')
+      require.ensure([], (require) => {
+        this.setState({ imgs: [...this.state.imgs, require('SRC/assets/img/bg/bg3.jpg')] })
+      }, 'background3')
+    }
   }
   componentDidMount() {
     window.addEventListener('resize', this.handleResize)
@@ -40,11 +55,7 @@ class Base extends Component {
       <div>
         <div className="full" style={{ position: 'fixed', opacity: 0.9 }}>
           <BackgroundSwitch
-            imgs={[
-              require('SRC/assets/img/bg/bg1.jpg'),
-              require('SRC/assets/img/bg/bg2.jpg'),
-              require('SRC/assets/img/bg/bg3.jpg')
-            ]}
+            imgs={this.state.imgs}
             timeout={10000}
             fadeout={1500}
             />

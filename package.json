@@ -11,7 +11,7 @@
     "qb": "npm run clean && npm run quick:build:webpack",
     "qbd": "npm run clean && npm run quick:build:detail:webpack",
     "start": "node build/devServer.js",
-    "start2": "node build/devServer2.js",
+    "start2": "webpack-dashboard -p 3001 build/devServer2.js",
     "lint": "eslint src"
   },
   "repository": {
@@ -25,6 +25,7 @@
     "isomorphic-fetch": "^2.2.1",
     "moment": "^2.13.0",
     "papaparse": "^4.1.2",
+    "rc-progress": "^2.0.1",
     "react": "^15.3.1",
     "react-addons-css-transition-group": "^15.3.1",
     "react-addons-update": "^15.1.0",
@@ -76,6 +77,7 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
+    "webpack-dashboard": "^0.1.8",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.10.0"
   },

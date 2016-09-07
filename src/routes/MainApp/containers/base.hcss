@@ -8,5 +8,4 @@
 .web-page {
   background: white !important;
   overflow: auto;
-  white-space: nowrap;
 }

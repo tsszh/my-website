@@ -4,9 +4,11 @@ var express = require('express');
 var cookieParser = require('cookie-parser')
 var webpack = require('webpack');
 var config = require('./webpack.config.dev');
+var DashboardPlugin = require('webpack-dashboard/plugin');
 
 var app = express();
 var compiler = webpack(config);
+compiler.apply(new DashboardPlugin({ port: 3001}));
 
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,

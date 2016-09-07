@@ -28,7 +28,7 @@ class BackgroundSwitch extends SetInterval {
     const { fadeout } = this.props
     const imgSrc = this.props.imgs[this.state.index]
     const divStyle = {
-      background: `url(${imgSrc}) no-repeat fixed center top`,
+      background: !imgSrc ? '#444' : `url(${imgSrc}) no-repeat fixed center top`,
       backgroundSize: 'cover',
       WebkitTransitionDuration: `${fadeout / 1000}s`,
       transitionDuration: `${fadeout / 1000}s`
